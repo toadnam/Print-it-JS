@@ -30,7 +30,9 @@ let bannerImg = document.querySelector(".banner-img")
 //Récupérer la balise p à l'intérieur de la div
 let bannerText = document.querySelector("#banner p")
 //tableau pour stocker les bullets points
-let bulletPoints = []
+
+
+
 
 //fonction permettant de mettre à jour le carousel
 function carousel(){
@@ -49,17 +51,18 @@ function createDots(){
 		let li = document.createElement("li")
 		ul.appendChild(li)
 		li.classList.add("dot") // Ajout de la classe dot à tous les li
-		//Ajout des bullets points au tableau
-		bulletPoints.push(li)
 	}
 }
 
 function upDateDots (){
-	for (let i=0; i < bulletPoints.length; i++){
-		bulletPoints[i].classList.remove("dot_selected")
-	}
-
-	bulletPoints[currentIndex].classList.add("dot_selected")
+	let allDot = document.querySelectorAll(".dot")
+	allDot.forEach((dot, index) => {
+		if (index === currentIndex) {
+			dot.classList.add("dot_selected")
+		} else {
+			dot.classList.remove("dot_selected")
+		}
+	})
 }
 
 arrow_right.addEventListener("click",() => {
