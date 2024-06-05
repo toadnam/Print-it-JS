@@ -27,3 +27,23 @@ arrowLeft.addEventListener ("click", () => {
 arrowRight.addEventListener("click", () => {
 	console.log("Click on the right arrow")
 })
+
+/**
+ * Creates the bullet points underneath the slider
+ * Style is applied through existing CSS classes
+ */
+
+let dotsContainer = document.querySelector(".dots")
+
+for (let i = 0; i < slides.length; i++) {
+	let dot = document.createElement("span")
+	dot.classList.add("dot")
+
+	dotsContainer.appendChild(dot)
+	
+	
+
+}
+dotsContainer.firstChild.classList.add(.dot_selected)
+// dot has only been defined in the for loop!!
+// states : active vs blur ? (onfocus / onblur)
