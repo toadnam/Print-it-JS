@@ -38,12 +38,18 @@ let dotsContainer = document.querySelector(".dots")
 for (let i = 0; i < slides.length; i++) {
 	let dot = document.createElement("span")
 	dot.classList.add("dot")
-
 	dotsContainer.appendChild(dot)
-	
-	
 
+	// dot.addEventListener("click", () => {
+	// dot.classList.toggle("dot_selected")
+	// console.log("selected dot")
+ 	//})	
+ if (i === 0) {
+		dot.classList.add("dot_selected")
+	}
 }
-dotsContainer.firstChild.classList.add(.dot_selected)
+
+
+
 // dot has only been defined in the for loop!!
-// states : active vs blur ? (onfocus / onblur)
+// left the function to call it on click, either toggle or if/else
