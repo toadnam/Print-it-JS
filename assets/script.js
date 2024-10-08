@@ -35,16 +35,34 @@ let bannerTag = document.getElementById("tag");
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelectorAll(".dot");
-console.log(dots);
 
 let index = 0;
 bannerImg.src = "./assets/images/slideshow/" + slides[0].image;
 arrowRight.addEventListener("click", () => {
   index++;
+  if (index > slides.length) {
+    index = 0;
+    index++;
+  } else {
+    bannerImg.src = "./assets/images/slideshow/" + slides[index].image;
+    bannerTag.innerHTML = slides[index].tagLine;
+    let indexDot = 0;
+
+    dots.forEach((dot) => {
+      if (indexDot === index) {
+        dot.classList.add("dot_selected");
+      } else {
+        dot.classList.remove("dot_selected");
+      }
+      indexDot++;
+    });
+  }
+});
+arrowLeft.addEventListener("click", () => {
+  index--;
   if (index < 0) {
     index = slides.length;
-  } else if (index > slides.length) {
-    index = 0;
+    index--;
   } else {
     bannerImg.src = "./assets/images/slideshow/" + slides[index].image;
     bannerTag.innerHTML = slides[index].tagLine;

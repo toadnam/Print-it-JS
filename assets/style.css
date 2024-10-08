@@ -136,6 +136,8 @@ table {
 }
 body {
   max-width: 1440px;
+  justify-content: center;
+  align-items: center;
 }
 section {
   margin-block: 6em;
@@ -168,6 +170,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1440px;
 }
 .logo {
   width: 260px;
@@ -336,6 +339,7 @@ header {
 }
 #contact {
   margin-bottom: 0;
+  width: auto;
 }
 #contact article,
 #contact div {
@@ -370,6 +374,7 @@ footer {
   justify-content: space-evenly;
   font-size: 12px;
   align-items: center;
+  max-width: 1440px;
 }
 footer div {
   position: relative;
@@ -399,10 +404,31 @@ footer div {
     width: 100%;
     text-align: center;
   }
+  #about-us aside {
+    object-fit: cover;
+  }
   #products {
     flex-direction: column-reverse;
     width: 100%;
     justify-content: center;
     align-items: center;
+  }
+  #contact .container {
+    flex-direction: column-reverse;
+    display: flex;
+
+    justify-content: center;
+    width: 100%;
+  }
+
+  #contact .container > div > div {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  footer {
+    flex-direction: column-reverse;
+    gap: 20px;
   }
 }
