@@ -136,7 +136,7 @@ table {
 }
 body {
   max-width: 1440px;
-  justify-content: center;
+
   align-items: center;
 }
 section {
@@ -199,6 +199,7 @@ header {
   position: relative;
 }
 .banner-img {
+  max-width: 1440px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -391,6 +392,12 @@ footer div {
 }
 
 @media all and (max-width: 1250px) {
+  main {
+    max-width: 1250px;
+  }
+  .container {
+    max-width: 1250px;
+  }
   #contact > article {
     flex: 2;
   }
@@ -413,6 +420,14 @@ footer div {
     justify-content: center;
     align-items: center;
   }
+  #why-us > div {
+    min-width: 1250px;
+    width: 100%;
+  }
+  #question {
+    min-width: 1250px;
+    width: 100%;
+  }
   #contact .container {
     flex-direction: column-reverse;
     display: flex;
@@ -430,5 +445,49 @@ footer div {
   footer {
     flex-direction: column-reverse;
     gap: 20px;
+    align-content: baseline;
+    min-width: 1250px;
+    margin: 0;
+  }
+  .footer-contact {
+    margin-bottom: 1em;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 768px) {
+  footer {
+    min-width: 768px;
+    width: 100%;
+  }
+  footer div {
+    width: 100%;
+  }
+  #why-us > div {
+    min-width: 768px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #question {
+    min-width: 768px;
+    width: 100%;
+  }
+  #products {
+    min-width: 768px;
+    width: 100%;
+  }
+  #about-us {
+    min-width: 768px;
+    width: 100%;
+  }
+  #banner {
+    min-width: 768px;
+    width: 100%;
+  }
+  header {
+    min-width: 768px;
+    width: 100%;
   }
 }

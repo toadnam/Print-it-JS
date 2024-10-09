@@ -77,6 +77,8 @@ arrowLeft.addEventListener("click", () => {
       indexDot++;
     });
   }
+  console.log(indexDot);
 });
 console.log(index);
+
 console.log(bannerImg);
