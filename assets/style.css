@@ -136,9 +136,15 @@ table {
 }
 body {
   max-width: 1440px;
+  justify-content: center;
 
-  align-items: center;
+  box-sizing: border-box;
 }
+main {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 section {
   margin-block: 6em;
 }
@@ -376,6 +382,7 @@ footer {
   font-size: 12px;
   align-items: center;
   max-width: 1440px;
+  width: 100%;
 }
 footer div {
   position: relative;
@@ -394,6 +401,7 @@ footer div {
 @media all and (max-width: 1250px) {
   main {
     max-width: 1250px;
+    width: 100%;
   }
   .container {
     max-width: 1250px;
@@ -443,11 +451,22 @@ footer div {
     align-items: center;
   }
   footer {
-    flex-direction: column-reverse;
-    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 40px;
     align-content: baseline;
-    min-width: 1250px;
+    max-width: 1250px;
+    width: 100%;
     margin: 0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+    justify-items: start;
+    align-items: center;
+  }
+  footer div {
+    width: 100%;
   }
   .footer-contact {
     margin-bottom: 1em;
@@ -457,10 +476,25 @@ footer div {
 }
 @media all and (max-width: 768px) {
   footer {
-    min-width: 768px;
+    max-width: 768px;
     width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    min-width: 300px;
   }
   footer div {
+    width: 100%;
+  }
+  #contact {
+    max-width: 768px;
+  }
+  #contact .container {
+    max-width: 100%;
+  }
+  #contact .container div {
+    width: 100%;
+  }
+  #contact .container .magnifying-glass {
     width: 100%;
   }
   #why-us > div {

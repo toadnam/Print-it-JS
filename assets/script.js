@@ -37,48 +37,47 @@ const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelectorAll(".dot");
 
 let index = 0;
+
+// Initialisation de l'image et du texte
 bannerImg.src = "./assets/images/slideshow/" + slides[0].image;
+bannerTag.innerHTML = slides[0].tagLine;
+
+// Fonction pour mettre à jour l'image, le texte et les dots
+function updateSlide() {
+  bannerImg.src = "./assets/images/slideshow/" + slides[index].image;
+  bannerTag.innerHTML = slides[index].tagLine;
+
+  dots.forEach((dot, idx) => {
+    if (idx === index) {
+      dot.classList.add("dot_selected");
+    } else {
+      dot.classList.remove("dot_selected");
+    }
+  });
+}
+
+// Flèche droite
 arrowRight.addEventListener("click", () => {
   index++;
-  if (index > slides.length) {
-    index = 0;
-    index++;
-  } else {
-    bannerImg.src = "./assets/images/slideshow/" + slides[index].image;
-    bannerTag.innerHTML = slides[index].tagLine;
-    let indexDot = 0;
-
-    dots.forEach((dot) => {
-      if (indexDot === index) {
-        dot.classList.add("dot_selected");
-      } else {
-        dot.classList.remove("dot_selected");
-      }
-      indexDot++;
-    });
+  if (index >= slides.length) {
+    index = 0; // Boucle vers le premier slide
   }
+  updateSlide();
 });
+
+// Flèche gauche
 arrowLeft.addEventListener("click", () => {
   index--;
   if (index < 0) {
-    index = slides.length;
-    index--;
-  } else {
-    bannerImg.src = "./assets/images/slideshow/" + slides[index].image;
-    bannerTag.innerHTML = slides[index].tagLine;
-    let indexDot = 0;
-
-    dots.forEach((dot) => {
-      if (indexDot === index) {
-        dot.classList.add("dot_selected");
-      } else {
-        dot.classList.remove("dot_selected");
-      }
-      indexDot++;
-    });
+    index = slides.length - 1; // Boucle vers le dernier slide
   }
-  console.log(indexDot);
+  updateSlide();
 });
-console.log(index);
+window.onload = setInterval(function () {
+  index++;
 
-console.log(bannerImg);
+  if (index >= slides.length) {
+    index = 0; // Boucle vers le premier slide
+  }
+  updateSlide();
+}, 3000);
