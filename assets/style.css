@@ -406,7 +406,9 @@ footer div {
     max-width: 1250px;
     width: 100%;
   }
-
+  section h2 {
+    text-align: center;
+  }
   #contact > article {
     flex: 2;
   }
@@ -425,9 +427,7 @@ footer div {
     justify-content: center;
     align-items: center;
   }
-  #about-us h2 {
-    text-align: center;
-  }
+
   #about-us aside {
     object-fit: cover;
   }
