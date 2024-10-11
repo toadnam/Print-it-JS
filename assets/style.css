@@ -136,13 +136,14 @@ table {
 }
 body {
   max-width: 1440px;
-  justify-content: center;
-
+  margin: 0 auto;
   box-sizing: border-box;
 }
-main {
+main,
+.container {
   width: 100%;
   box-sizing: border-box;
+  padding-inline: 5%;
 }
 
 section {
@@ -167,16 +168,13 @@ li {
   font-size: 16px;
   line-height: 26px;
 }
-.container {
-  max-width: 1440px;
-  margin-inline: auto;
-  padding-inline: 5%;
-}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1440px;
+  margin-inline: auto;
 }
 .logo {
   width: 260px;
@@ -227,7 +225,7 @@ header {
 #banner .arrow_left {
   left: 14px;
   position: absolute;
-  background-color: #28363d;
+
   padding: 5px;
   border-radius: 20px 0 0 20px;
 }
@@ -399,19 +397,21 @@ footer div {
 }
 
 @media all and (max-width: 1250px) {
+  header,
+  .container {
+    max-width: 1250px;
+  }
   main {
     max-width: 1250px;
     width: 100%;
   }
-  .container {
-    max-width: 1250px;
-  }
+
   #contact > article {
     flex: 2;
   }
   #about-us {
     flex-direction: column-reverse;
-    width: 100%;
+    max-width: 100%;
     justify-content: center;
     align-items: center;
   }
@@ -429,19 +429,17 @@ footer div {
     align-items: center;
   }
   #why-us > div {
-    min-width: 1250px;
-    width: 100%;
+    max-width: 100%;
   }
   #question {
-    min-width: 1250px;
-    width: 100%;
+    max-width: 100%;
   }
   #contact .container {
     flex-direction: column-reverse;
     display: flex;
 
     justify-content: center;
-    width: 100%;
+    max-width: 100%;
   }
 
   #contact .container > div > div {
@@ -455,8 +453,8 @@ footer div {
     align-items: flex-end;
     gap: 40px;
     align-content: baseline;
-    max-width: 1250px;
-    width: 100%;
+    max-width: 100%;
+
     margin: 0;
     padding: 20px;
     display: grid;
@@ -466,7 +464,7 @@ footer div {
     align-items: center;
   }
   footer div {
-    width: 100%;
+    max-width: 100%;
   }
   .footer-contact {
     margin-bottom: 1em;
@@ -475,53 +473,38 @@ footer div {
   }
 }
 @media all and (max-width: 768px) {
-  footer {
-    max-width: 768px;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    min-width: 300px;
-  }
-  footer div {
-    width: 100%;
-  }
-  #contact {
-    max-width: 768px;
-  }
-  #contact .container {
+  section {
     max-width: 100%;
   }
-  #contact .container div {
-    width: 100%;
+  header,
+  footer,
+  main,
+  body,
+  .container {
+    max-width: 100%;
+    min-width: 485px;
+    margin-right: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  footer div {
+    max-width: 100%;
+  }
+  #contact {
+    max-width: 100%;
+  }
+
   #contact .container .magnifying-glass {
-    width: 100%;
+    max-width: 100%;
   }
   #why-us > div {
-    min-width: 768px;
-    width: 100%;
+    max-width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  #question {
-    min-width: 768px;
-    width: 100%;
-  }
-  #products {
-    min-width: 768px;
-    width: 100%;
-  }
-  #about-us {
-    min-width: 768px;
-    width: 100%;
-  }
-  #banner {
-    min-width: 768px;
-    width: 100%;
-  }
-  header {
-    min-width: 768px;
-    width: 100%;
   }
 }
