@@ -144,7 +144,7 @@ main,
 .container {
   width: 100%;
   box-sizing: border-box;
-  padding-inline: 5%;
+  padding-inline: 0.5%;
 }
 
 section {
