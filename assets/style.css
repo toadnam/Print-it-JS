@@ -142,7 +142,7 @@ body {
 }
 main,
 .container {
-  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   padding-inline: 0.5%;
 }
@@ -172,10 +172,50 @@ li {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   max-width: 1440px;
   margin-inline: auto;
+}
+.recherche {
+  position: relative;
+  opacity: 1;
+  max-width: 100%;
+}
+.user {
+  opacity: 1;
+  max-width: 100%;
+}
+.user i {
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+.container input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding-top: 40px;
+  width: 300px;
+}
+.fa-magnifying-glass {
+  margin-left: -15px;
+  font-size: 17px;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+.liens {
+  max-width: 100%;
+  width: 100%;
+  background-color: #e6f4fb;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.liens a {
+  text-decoration: none;
+  color: black;
 }
 .logo {
   width: 260px;
@@ -402,6 +442,7 @@ footer div {
   .container {
     max-width: 1250px;
   }
+
   main {
     max-width: 1250px;
     width: 100%;
@@ -491,9 +532,21 @@ footer div {
   body,
   .container {
     max-width: 100%;
-    min-width: 485px;
-    margin-right: 0;
-    padding: 0;
+    min-width: 470px;
+    overflow-x: hidden;
+  }
+  .recherche input,
+  .recherche i,
+  .user i {
+    opacity: 0;
+    width: 0;
+  }
+  .liens {
+    display: none;
+  }
+  #banner {
+    max-width: 100%;
+    min-width: 470px;
   }
   footer {
     display: flex;
