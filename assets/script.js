@@ -1,3 +1,16 @@
+const left_arrow = document.querySelector('#left_arrow')
+const right_arrow = document.querySelector('#right_arrow')
+left_arrow.addEventListener("click", () => {
+    	console.log("Vous avez cliqué sur la flèche gauche")
+    })
+right_arrow.addEventListener("click", () => {
+    	console.log("Vous avez cliqué sur la flèche droite")
+    })
+
+
+
+    
+
 const slides = [
 	{
 		"image":"slide1.jpg",
