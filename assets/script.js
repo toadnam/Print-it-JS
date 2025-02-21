@@ -2,6 +2,7 @@ const leftArrow = document.querySelector('#left_arrow')
 const rightArrow = document.querySelector('#right_arrow')
 const imageBanner = document.querySelector(".banner-img")
 const texteBanner = document.querySelector("#banner p")
+const dotsBanner = document.querySelectorAll(".dot")
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -23,18 +24,23 @@ const slides = [
 
 let index = 0
 let index2 = 4
-leftArrow.addEventListener("click", () => {
-    	console.log("Vous avez cliqué sur la flèche gauche")
-		index2--
-		console.log(index2)
-		imageBanner.src = "./assets/images/slideshow/"+slides[index2].image
-		texteBanner.innerHTML = slides[index2].tagLine
-    })
 rightArrow.addEventListener("click", () => {
     	console.log("Vous avez cliqué sur la flèche droite")
 		index++
 		console.log(index)
 		imageBanner.src = "./assets/images/slideshow/"+slides[index].image
 		texteBanner.innerHTML = slides[index].tagLine
+		dotsBanner[index].classList.add("dot_selected")
+		dotsBanner[index-1].classList.remove("dot_selected")
+	})
+leftArrow.addEventListener("click", () => {
+    	console.log("Vous avez cliqué sur la flèche gauche")
+		index2--
+		console.log(index2)
+		imageBanner.src = "./assets/images/slideshow/"+slides[index2].image
+		texteBanner.innerHTML = slides[index2].tagLine
+		dotsBanner[index].classList.remove("dot_selected")
+		dotsBanner[index2].classList.add("dot_selected")
+		dotsBanner[index2+1].classList.remove("dot_selected")
 	})
 
