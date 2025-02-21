@@ -1,16 +1,7 @@
-const left_arrow = document.querySelector('#left_arrow')
-const right_arrow = document.querySelector('#right_arrow')
-left_arrow.addEventListener("click", () => {
-    	console.log("Vous avez cliqué sur la flèche gauche")
-    })
-right_arrow.addEventListener("click", () => {
-    	console.log("Vous avez cliqué sur la flèche droite")
-    })
-
-
-
-    
-
+const leftArrow = document.querySelector('#left_arrow')
+const rightArrow = document.querySelector('#right_arrow')
+const imageBanner = document.querySelector(".banner-img")
+const texteBanner = document.querySelector("#banner p")
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -29,3 +20,20 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+let index = 0
+let index2 = 3
+leftArrow.addEventListener("click", () => {
+    	console.log("Vous avez cliqué sur la flèche gauche")
+		index2--
+		console.log(index)
+		imageBanner.src = "./assets/images/slideshow/"+slides[index2].image
+    })
+rightArrow.addEventListener("click", () => {
+    	console.log("Vous avez cliqué sur la flèche droite")
+		index++
+		console.log(index)
+		imageBanner.src = "./assets/images/slideshow/"+slides[index].image
+		texteBanner.innerHTML = slides[index].tagLine
+	})
+
