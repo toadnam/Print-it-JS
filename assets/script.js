@@ -26,7 +26,7 @@ let index2 = 3
 leftArrow.addEventListener("click", () => {
     	console.log("Vous avez cliqué sur la flèche gauche")
 		index2--
-		console.log(index)
+		console.log(index2)
 		imageBanner.src = "./assets/images/slideshow/"+slides[index2].image
     })
 rightArrow.addEventListener("click", () => {
