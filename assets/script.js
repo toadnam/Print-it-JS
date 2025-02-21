@@ -22,12 +22,13 @@ const slides = [
 ]
 
 let index = 0
-let index2 = 3
+let index2 = 4
 leftArrow.addEventListener("click", () => {
     	console.log("Vous avez cliqué sur la flèche gauche")
 		index2--
 		console.log(index2)
 		imageBanner.src = "./assets/images/slideshow/"+slides[index2].image
+		texteBanner.innerHTML = slides[index2].tagLine
     })
 rightArrow.addEventListener("click", () => {
     	console.log("Vous avez cliqué sur la flèche droite")
