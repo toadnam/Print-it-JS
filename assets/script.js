@@ -1,3 +1,5 @@
+// Gestion du slider
+	// Définition des variables pour les flèches gauche et droite, les images, le texte, les bullets points et les slides de la bannière :
 const leftArrow = document.querySelector('#left_arrow')
 const rightArrow = document.querySelector('#right_arrow')
 const imageBanner = document.querySelector(".banner-img")
@@ -23,43 +25,37 @@ const slides = [
 ]
 
 let index = 0
+
+	//fonction de défilement au clic de la flèche droite :
 rightArrow.addEventListener("click", () => {
-    	console.log("Vous avez cliqué sur la flèche droite")
 		if (index < 3) {
 			index++
 			dotsBanner[index].classList.add("dot_selected")
 			dotsBanner[index-1].classList.remove("dot_selected")
 			imageBanner.src = "./assets/images/slideshow/"+slides[index].image
-			texteBanner.innerHTML = slides[index].tagLine
-			console.log(index+" if")
+			texteBanner.innerHTML = slides[index].tagLine			
 		}else{
 			index = 0
 			dotsBanner[3].classList.remove("dot_selected")
 			dotsBanner[0].classList.add("dot_selected")
 			imageBanner.src = "./assets/images/slideshow/"+slides[0].image
 			texteBanner.innerHTML = slides[0].tagLine
-			console.log(index+"else")
 		}	
 	})
 
+	// fonction de défilement au clic de la flèche gauche :
 leftArrow.addEventListener("click", () => {
-    	console.log("Vous avez cliqué sur la flèche gauche")
-		if (index2 > 0) {
-			index2--
-			dotsBanner[index].classList.remove("dot_selected")
-			dotsBanner[index2].classList.add("dot_selected")
-			dotsBanner[index2+1].classList.remove("dot_selected")
-			imageBanner.src = "./assets/images/slideshow/"+slides[index2].image
-			texteBanner.innerHTML = slides[index2].tagLine	
-			console.log(index2+" if")
+		if(index > 0){
+			index --
+			dotsBanner[index].classList.add("dot_selected")
+			dotsBanner[index+1].classList.remove("dot_selected")
+			imageBanner.src = "./assets/images/slideshow/"+slides[index].image
+			texteBanner.innerHTML = slides[index].tagLine
+		}else{
+			index = 3
+			dotsBanner[0].classList.remove("dot_selected")
+			dotsBanner[3].classList.add("dot_selected")
+			imageBanner.src = "./assets/images/slideshow/"+slides[3].image
+			texteBanner.innerHTML = slides[3].tagLine
 		}
 	})
-
-
-	// 
-
-	// if(i < nbElements - 4)
-    //     i++;
-    // else
-    //     i = 0;
-
