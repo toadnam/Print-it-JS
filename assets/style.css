@@ -290,6 +290,27 @@ footer div {
 
 }
 
+#banner {
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
 @media all and (max-width: 1250px) {
 	#contact > article {
 		flex: 2;
