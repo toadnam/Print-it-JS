@@ -311,6 +311,10 @@ footer div {
     right: 20px;
 }
 
+.dot {
+  cursor: pointer;
+}
+
 @media all and (max-width: 1250px) {
 	#contact > article {
 		flex: 2;
